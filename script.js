@@ -250,3 +250,12 @@ ${pesan}`;
 
   window.open(url, "_blank");
 }
+// ===== FIX LOADING SAAT BACK MOBILE =====
+window.addEventListener("pageshow", function (event) {
+  const transition = document.getElementById("page-transition");
+  if (transition) transition.classList.remove("active");
+});
+window.addEventListener("load", function () {
+  const transition = document.getElementById("page-transition");
+  if (transition) transition.classList.remove("active");
+});
