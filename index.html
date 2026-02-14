@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pondok Pesantren Hidayatul Mubtadi-in</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- TOP BAR (MODEL IKON LINGKARAN SEPERTI CONTOH) -->
+<div class="top-bar">
+  <div class="top-content">
+
+    <div class="top-item">
+      <span class="icon-circle">
+        <i class="fa-regular fa-clock"></i>
+      </span>
+      <span id="clock">--:--:--</span>
+    </div>
+
+    <div class="top-item">
+      <span class="icon-circle">
+        <i class="fa-solid fa-phone"></i>
+      </span>
+      <span>0813-3210-4643</span>
+    </div>
+
+    <div class="top-item">
+      <span class="icon-circle">
+        <i class="fa-regular fa-envelope"></i>
+      </span>
+      <span>pphidayatulmubtadiiin@gmail.com</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- NAVBAR -->
+<nav class="main-nav">
+  <div class="nav-container">
+
+    <div class="brand">
+      <img src="fotopondok/fotopondok.png" alt="Logo Pondok">
+
+      <div class="brand-text">
+        <div class="title-top">PONDOK PESANTREN</div>
+        <div class="title-main">HIDAYATUL MUBTADI-IN</div>
+        <div class="title-arab">مؤسسة المعهد الإسلامي هداية المبتدئين</div>
+        <div class="title-address">
+          Jl. Teratai, Condro Utara, Kaliwates, Kab.Jember
+        </div>
+      </div>
+    </div>
+
+    <ul id="menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="pendidikan.html">Pendidikan</a></li>
+        <li><a href="fasilitas.html">Fasilitas</a></li>
+        <li><a href="pendaftaran.html">Pendaftaran</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <!-- BACKGROUND FOTO -->
+  <div class="hero-bg">
+    <img src="fotopondok/foto4.jpeg" class="hero-photo animate-photo">
+  </div>
+  <!-- ORNAMEN BERGERAK (BIRU – PUTIH – KUNING) -->
+<!-- ORNAMEN GERAK ALA ALQODIRI -->
+  <div class="hero-ornamen">
+    <div class="zigzag"></div>
+    <div class="diagonal"></div>
+    <div class="dots"></div>
+    <div class="wave"></div>
+  </div>
+  <!-- LAPISAN GELAP SUPAYA TULISAN TERBACA -->
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+  <div class="hero-text-box">
+    <div class="hero-text animate-text">
+      <div class="hero-small">Pondok Pesantren</div>
+
+      <h1>
+        <span class="green">HIDAYATUL</span><br>
+        <span class="black">MUBTADI-IN</span>
+      </h1>
+
+      <div class="arab">
+        مؤسسة المعهد الإسلامي هداية المبتدئين
+      </div>
+
+      <p class="tagline">
+        Menjaga Tradisi Salaf — Mendidik Generasi Berakhlak, Berilmu, dan Mandiri
+      </p>
+
+      <div class="btn-group">
+        <a href="profil.html" class="btn-primary">Profil Pondok</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</header>
+<!-- SOCIAL BAR (DI BAWAH HERO) -->
+<div class="social-bar">
+  <div class="social-text">
+    Pondok Pesantren Hidayatul Mubtadi-in
+  </div>
+
+<div class="social-icons">
+  <a href="https://facebook.com/namapondok" class="fb" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="https://instagram.com/hidayatul_mubtadi.iin" class="ig" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://youtube.com" class="yt" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+  <a href="mailto:pphidayatulmubtadiiin@gmail.com" class="mail"><i class="fa-regular fa-envelope"></i></a>
+  <a href="https://wa.me/6285175049779" class="wa" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+
+</div>
+<!-- TICKER BAR (TEKS BERJALAN + TANGGAL) -->
+<div class="ticker-bar">
+  <div class="ticker-label">Info Pondok</div>
+
+<div class="ticker-wrapper">
+  <div class="ticker-track">
+    <div class="ticker-text">
+      Pondok Pesantren Hidayatul Mubtadi-in menjunjung tinggi toleransi,
+      berjamā’ah dalam ibadah dan muamalah, serta membentuk santri berakhlak,
+      berilmu, dan berdaya guna bagi umat.
+    </div>
+
+    <div class="ticker-text">
+      Pondok Pesantren Hidayatul Mubtadi-in menjunjung tinggi toleransi,
+      berjamā’ah dalam ibadah dan muamalah, serta membentuk santri berakhlak,
+      berilmu, dan berdaya guna bagi umat.
+    </div>
+  </div>
+</div>
+  <div class="ticker-date" id="today-date"></div>
+</div>
+<!-- SECTION BERITA UTAMA -->
+<section class="news-section">
+      <!-- BERITA KECIL BARIS BAWAH -->
+     <div class="news-header">
+      <h2>BERITA TERKINI</h2>
+      <div class="line"></div>
+    </div>
+
+  <div class="news-grid">
+
+    <!-- BERITA BESAR KIRI -->
+      <a href="berita/berita1.html" class="news-card big">
+      <img src="fotopondok/foto10.jpeg" alt="Berita 1">
+      <div class="news-overlay">
+        <span class="news-tag">MAKLUMAT</span>
+        <h3>Kedatangan SYAIKH MUHYIDDIN ABD.RAZAQ dari Syiria Di PP.Hidayatul Mubtadi-in</h3>
+        <p class="news-date">Humas • jun 2020</p>
+      </div>
+    </a>
+
+    <!-- BERITA BESAR KANAN -->
+    <a href="berita/berita2.html" class="news-card big">
+      <img src="fotopondok/foto8.png" alt="Berita 2">
+      <div class="news-overlay">
+        <span class="news-tag green">MAKLUMAT</span>
+        <h3>Berdiri Kokoh di Bawah Langit Milik-Nya: Rumah Ibadah Sebagai Pusat Peradaban dan Kedamaian Jiwa</h3>
+        <p class="news-date">Humas • 15 April 2022</p>
+      </div>
+    </a>
+    <a href="berita/berita3.html" class="news-card small">
+      <img src="fotopondok/foto2.jpeg" alt="Berita 3">
+      <div class="news-overlay">
+        <span class="news-tag">SANTRI</span>
+        <h4>Gema Harmoni Rebana dan Lantunan Sholawat </h4>
+      </div>
+    </a>
+
+    <a href="berita/berita4.html" class="news-card small">
+      <img src="fotopondok/foto6.png" alt="Berita 4">
+      <div class="news-overlay">
+        <span class="news-tag">SANTRI</span>
+        <h4>Khidmat Melestarikan Tradisi Kitab Kuning</h4>
+      </div>
+    </a>
+
+    <a href="berita/berita5.html" class="news-card small">
+      <img src="fotopondok/foto7.png" alt="Berita 5">
+      <div class="news-overlay">
+        <span class="news-tag">SANTRI</span>
+        <h4>Momen kebersamaan di Hari Santri. merajut masa depan yang lebih cerah.</h4>
+      </div>
+    </a>
+
+    <a href="berita/berita6.html" class="news-card small">
+      <img src="fotopondok/foto9.png" alt="Berita 6">
+      <div class="news-overlay">
+        <span class="news-tag">SANTRI</span>
+        <h4>Lomba: Acara Lomba Futsal di Pondok Pesantren</h4>
+      </div>
+    </a>
+
+  </div>
+</section>
+<!-- BANNER INFO SANTRI BARU -->
+<section class="banner-santri">
+
+  <div class="banner-inner reveal">
+    <h3 class="info-title">Informasi Seputar</h3>
+    <h2 class="info-main">Penerimaan Santri Baru</h2>
+    <p class="info-year">Tahun 2026–2027</p>
+
+    <a href="pendaftaran.html" class="btn-santri">Klik Di Sini →</a>
+  </div>
+
+</section>
+
+
+<section class="four-grid">
+<!-- ================== KOLOM 1 : PENGUMUMAN ================== -->
+<div class="news-column">
+
+  <!-- 1 BESAR -->
+  <a href="berita/berita7.html" class="news-card big">
+    <img src="fotopondok/pengumuman.png" class="news-img">
+    <div class="news-overlay">
+      <span class="news-tag">PENGUMUMAN</span>
+      <h3>Pendaftaran Santri baru Yayasan Pondok Pesantren Hidayatul Mubtadi-in</h3>
+      <p class="news-date">26 Juli 2019</p>
+    </div>
+  </a>
+
+  <!-- 2 KECIL (VERTIKAL, TEKS DI SAMPING FOTO) -->
+  <a href="berita/berita8.html" class="news-card small">
+    <img src="fotopondok/kitaba.png">
+    <div class="news-small-text">
+      <span class="news-tag">PENGUMUMAN</span>
+      <h4>Pengajian kitab Nashoihul 'Ibad Karya Muhammad Nawawi bin Umar Al-Jawi</h4>
+    </div>
+  </a>
+
+  <a href="berita/berita9.html" class="news-card small">
+    <img src="fotopondok/kitabn.png">
+    <div class="news-small-text">
+      <span class="news-tag">PENGUMUMAN</span>
+      <h4>Pengajian kitab As - Sanatir Karya Musa Musthofa Bin Shofi bin Musthofa Atamanni</h4>
+    </div>
+  </a>
+</div>
+
+
+<!-- ================== KOLOM 2 : BLOG GURU ================== -->
+<div class="news-column">
+
+  <!-- 1 BESAR -->
+  <a href="berita/berita10.html" class="news-card big">
+    <img src="fotopondok/foto1.png" class="news-img">
+    <div class="news-overlay">
+      <span class="news-tag">KEBERSAMAAN</span>
+      <h3>Momen Kebersamaan para Santri Setelah Haflah Imtihan</h3>
+      <p class="news-date">11 Maret 2024</p>
+    </div>
+  </a>
+
+  <!-- 2 KECIL (VERTIKAL, TEKS DI SAMPING FOTO) -->
+  <a href="berita/berita11.html" class="news-card small">
+    <img src="fotopondok/foto5.jpeg">
+    <div class="news-small-text">
+      <span class="news-tag">KEBERSAMAAN</span>
+      <h4>Foto Bersama Setelah Haflah Imtihan</h4>
+    </div>
+  </a>
+
+  <a href="berita/berita12.html" class="news-card small">
+    <img src="fotopondok/p1.png">
+    <div class="news-small-text">
+      <span class="news-tag">KEBERSAMAAN</span>
+      <h4>Para santri Bercanda dan Tawa</h4>
+    </div>
+  </a>
+</div>
+
+
+<!-- ================== KOLOM 3 : FASILITAS ================== -->
+<div class="news-column">
+
+  <!-- 1 BESAR -->
+  <a href="berita/berita13.html" class="news-card big">
+    <img src="fotopondok/masjid.png" class="news-img">
+    <div class="news-overlay">
+      <span class="news-tag">Fasilitas</span>
+      <h3>Masjid Pondok Pesantren Hidayatul Mubtadi-in</h3>
+      <p class="news-date"> Mei 2022</p>
+    </div>
+  </a>
+
+  <!-- 2 KECIL (VERTIKAL, TEKS DI SAMPING FOTO) -->
+  <a href="berita/berita14.html" class="news-card small">
+    <img src="fotopondok/asrama.png">
+    <div class="news-small-text">
+      <span class="news-tag">Fasilitas</span>
+      <h4>Asrama Santri Putra Mahasiswa</h4>
+    </div>
+  </a>
+
+  <a href="berita/berita15.html" class="news-card small">
+    <img src="fotopondok/dapur.png">
+    <div class="news-small-text">
+      <span class="news-tag">Fasilitas</span>
+      <h4>Dapur Umum: Tempat Makan para Santri</h4>
+    </div>
+  </a>
+</div>
+
+
+<!-- ================== KOLOM 4 : KEGIATAN ================== -->
+<div class="news-column">
+
+  <!-- 1 BESAR -->
+  <a href="berita/berita16.html" class="news-card big">
+    <img src="fotopondok/roan.png" class="news-img">
+    <div class="news-overlay">
+      <span class="news-tag">KEGIATAN</span>
+      <h3>Para Santi Bergotong royong membangun Asrama Putra</h3>
+      <p class="news-date">02 Nov 2019</p>
+    </div>
+  </a>
+
+  <!-- 2 KECIL (VERTIKAL, TEKS DI SAMPING FOTO) -->
+  <a href="berita/berita17.html" class="news-card small">
+    <img src="fotopondok/ngaji.png">
+    <div class="news-small-text">
+      <span class="news-tag">Kegiatan</span>
+      <h4>Santri Mengkaji Kitab bersama Pengasuh Pondok Pesantren</h4>
+    </div>
+  </a>
+
+  <a href="berita/berita18.html" class="news-card small">
+    <img src="fotopondok/juara.png">
+    <div class="news-small-text">
+      <span class="news-tag">Kegiatan</span>
+      <h4>Pembagian Juara Dalam rangka memeriahkan Haflatul Imtihan</h4>
+    </div>
+  </a>
+</div>
+</section>
+
+<section class="gibs-like">
+  <div class="gibs-container">
+
+    <!-- BARIS ATAS: TEKS -->
+    <div class="gibs-top reveal-up">   <!-- 👈 TAMBAH CLASS -->
+      <div class="gibs-left">
+        <p class="gibs-small">PONDOK PESANTREN</p>
+        <h1 class="gibs-big">Hidayatul Mubtadi-in</h1>
+        <div class="gibs-line"></div>
+      </div>
+
+      <div class="gibs-right">
+        <p>
+          Dengan visi “Mencetak generasi islami yang berakhlakul karimah,
+          berprestasi, dan berwawasan global”, Pondok Pesantren Hidayatul
+          Mubtadi-in berkomitmen mendidik santri berkarakter, berilmu,
+          dan mandiri serta siap berkhidmat kepada umat.
+        </p>
+      </div>
+    </div>
+
+    <!-- BARIS BAWAH: FOTO -->
+    <div class="gibs-grid">
+
+      <!-- KOTAK KIRI -->
+      <div class="gibs-card square reveal-left">  <!-- 👈 MASUK DARI KIRI -->
+        <img src="fotopondok/asramaputri.jpeg" alt="Pesantren">
+        <div class="gibs-overlay">
+          <h3>Asrama Putri</h3>
+          <p>Membentuk muslimah berakidah, beramal sunnah, dan berakhlak mulia.</p>
+        </div>
+        <a href="fasilitas.html" class="gibs-btn">SELENGKAPNYA</a>
+      </div>
+
+      <!-- PERSEGI PANJANG KANAN -->
+      <div class="gibs-card wide reveal-right">  <!-- 👈 MASUK DARI KANAN -->
+        <img src="fotopondok/asramaputra.png" alt="Tahfidz">
+        <div class="gibs-overlay">
+          <h3>Asrama Putra</h3>
+          <p>Jauh dari orang tua bukan alasan untuk manja. Di sini kita ditempa jadi pria perkasa.</p>
+        </div>
+        <a href="fasilitas.html" class="gibs-btn">SELENGKAPNYA</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ================= KUTIPAN INSPIRATIF ================= -->
+<section class="quote-section">
+
+  <div class="quote-inner reveal">
+    <span class="quote-label">KUTIPAN INSPIRATIF</span>
+
+    <h2 class="quote-text">
+      “Pendidikan adalah senjata paling ampuh yang bisa kamu gunakan untuk mengubah dunia…”
+    </h2>
+
+    <p class="quote-author">— Nelson Mandela</p>
+  </div>
+
+</section>
+
+<!-- ================= TESTIMONI ================= -->
+<section class="testimoni-section">
+
+  <div class="testimoni-container reveal-up">
+
+    <!-- KIRI -->
+    <div class="testimoni-left">
+
+      <button class="arrow left" onclick="slideTesti(-1)">❮</button>
+
+      <div class="testimoni-slider" id="testiSlider">
+
+  <!-- 1 -->
+  <div class="testimoni-item">
+    <div class="quote-mark">“</div>
+    <p class="testimoni-text">
+      Terima kasih kepada Pondok Pesantren Hidayatul Mubtadi-in yang telah
+      mendidik generasi berakhlak dan berilmu.
+    </p>
+    <div class="testimoni-profile">
+      <h4>Masnurus Sholeh</h4>
+      <span>Alumni Pondok</span>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="testimoni-item">
+    <div class="quote-mark">“</div>
+    <p class="testimoni-text">
+      Pondok ini membentuk karakter dan kedisiplinan saya hingga sukses.
+    </p>
+    <div class="testimoni-profile">
+      <h4>Cipunk</h4>
+      <span>Alumni Pondok</span>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="testimoni-item">
+    <div class="quote-mark">“</div>
+    <p class="testimoni-text">
+      Lingkungan yang penuh keberkahan dan kebersamaan.
+    </p>
+    <div class="testimoni-profile">
+      <h4>Umam</h4>
+      <span>Alumni Pondok</span>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="testimoni-item">
+    <div class="quote-mark">“</div>
+    <p class="testimoni-text">
+      Pendidikan agama dan umum berjalan seimbang dengan sangat baik.
+    </p>
+    <div class="testimoni-profile">
+      <h4>Yusril</h4>
+      <span>Alumni Pondok</span>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="testimoni-item">
+    <div class="quote-mark">“</div>
+    <p class="testimoni-text">
+      Saya bangga menjadi bagian dari keluarga besar pondok ini.
+    </p>
+    <div class="testimoni-profile">
+      <h4>Rafli Musthofa</h4>
+      <span>Santri</span>
+    </div>
+  </div>
+
+</div>
+
+
+      <button class="arrow right" onclick="slideTesti(1)">❯</button>
+
+    </div>
+
+    <!-- KANAN -->
+    <div class="testimoni-card">
+
+      <h2>Alumni Pondok<br>Pesantren Hidayatul<br>Mubtadi-in</h2>
+
+      <p style="margin-bottom:25px;">
+        Klik tombol di bawah untuk mengirim testimoni melalui email.
+      </p>
+
+      <a 
+        href="mailto:pphidayatulmubtadiiin@gmail.com?subject=Testimoni Alumni Pondok&body=Nama:%0D%0A%0D%0ATestimoni:%0D%0A"
+        class="btn-testimoni">
+        Kirim Testimoni
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- KOLOM 1 -->
+    <div class="footer-col">
+      <h1 class="footer-brand">HIDAYATUL MUBTADI-IN</h1>
+      <h2 class="footer-arab">مؤسسة المعهد الإسلامي هداية المبتدئين</h2>
+      <p class="footer-address">
+        Jl. Teratai, Condro Utara, Kaliwates, Kab. Jember
+      </p>
+
+<div class="social-footer">
+  <span class="soc ig"><i class="fab fa-instagram"></i></span>
+  <span class="soc wa"><i class="fab fa-whatsapp"></i></span>
+  <span class="soc fb"><i class="fab fa-facebook-f"></i></span>
+</div>
+
+
+    </div>
+
+    <!-- KOLOM 2 -->
+    <div class="footer-col">
+      <h3>Kontak</h3>
+      <ul>
+        <li><i class="fas fa-phone"></i> 0813-3210-4643</li>
+        <li class="contact-row">
+          <i class="fas fa-envelope"></i>
+          <span>pphidayatulmubtadiiin@gmail.com</span>
+        </li>
+
+        <li><i class="far fa-clock"></i> Senin–Jumat: 07.00–17.00</li>
+        <li><i class="far fa-clock"></i> Sabtu–Minggu: 07.00–15.00</li>
+      </ul>
+    </div>
+
+    <!-- KOLOM 3 -->
+    <div class="footer-col">
+      <h3>Kategori</h3>
+      <ul>
+        <li>Pendidikan</li>
+        <li>Berita</li>
+        <li>PPDB</li>
+      </ul>
+    </div>
+
+    <!-- KOLOM 4 -->
+    <div class="footer-col">
+      <h3>Kunjungi Pondok</h3>
+      <p>Klik untuk menuju lokasi Pondok di Google Maps</p>
+      <a href="kontak.html#maplokasi" class="btn-lokasi">
+        <i class="fas fa-map-marker-alt"></i> LOKASI
+      </a>
+    </div>
+
+  </div>
+</footer>
+<!-- ===== FOOTER BAWAH (COPYRIGHT) ===== -->
+<div class="footer-bottom">
+  <p>© 2026 Pondok Pesantren Hidayatul Mubtadi-in • All Rights Reserved</p>
+</div>
+<!-- PREMIUM PAGE TRANSITION -->
+<div id="page-transition">
+  <div class="circle-loader"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

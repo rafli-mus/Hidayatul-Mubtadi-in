@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendaftaran Santri Baru | Pondok Pesantren Hidayatul Mubtadi-in</title>
+<link rel="stylesheet" href="style.css">      <!-- biar navbar sama -->
+<link rel="stylesheet" href="service.css">    <!-- khusus halaman profil -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- TOP BAR (MODEL IKON LINGKARAN SEPERTI CONTOH) -->
+<div class="top-bar">
+  <div class="top-content">
+
+    <div class="top-item">
+      <span class="icon-circle">
+        <i class="fa-regular fa-clock"></i>
+      </span>
+      <span id="clock">--:--:--</span>
+    </div>
+
+    <div class="top-item">
+      <span class="icon-circle">
+        <i class="fa-solid fa-phone"></i>
+      </span>
+      <span>0813-3210-4643</span>
+    </div>
+
+    <div class="top-item">
+      <span class="icon-circle">
+        <i class="fa-regular fa-envelope"></i>
+      </span>
+      <span>pphidayatulmubtadiiin@gmail.com</span>
+    </div>
+
+  </div>
+</div>
+<!-- NAVBAR SAMA PERSIS DARI INDEX (copy paste saja) -->
+<nav class="main-nav">
+  <div class="nav-container">
+
+    <div class="brand">
+      <img src="fotopondok/fotopondok.png" alt="Logo Pondok">
+
+      <div class="brand-text">
+        <div class="title-top">PONDOK PESANTREN</div>
+        <div class="title-main">HIDAYATUL MUBTADI-IN</div>
+        <div class="title-arab">مؤسسة المعهد الإسلامي هداية المبتدئين</div>
+        <div class="title-address">
+          Jl. Teratai, Condro Utara, Kaliwates, Kab.Jember
+        </div>
+      </div>
+    </div>
+
+<ul id="menu">
+  <li><a href="index.html">Beranda</a></li>
+  <li><a href="profil.html">Profil</a></li>
+  <li><a href="pendidikan.html">Pendidikan</a></li>
+  <li><a href="fasilitas.html">Fasilitas</a></li>
+  <li><a href="pendaftaran.html">Pendaftaran</a></li>
+  <li><a href="kontak.html">Kontak</a></li>
+</ul>
+
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+</nav>
+
+
+<!-- ================= HERO PENDAFTARAN ================= -->
+<header class="hero-daftar reveal">
+  <div class="hero-daftar-bg">
+     <img src="fotopondok/pendaftaran.jpeg" alt="Pendaftaran">
+  </div>
+
+  <div class="hero-daftar-content">
+    <div class="hero-daftar-box">
+      <h1>Penerimaan & Pendaftaran<br>
+          Santri Baru<br>
+          Tahun Ajaran 2026/2027</h1>
+
+      <p>
+        Pondok Pesantren Hidayatul Mubtadi-in membuka pendaftaran santri baru 
+        dengan sistem pendidikan berbasis akhlak, ilmu, dan kemandirian.
+      </p>
+
+      <a href="#formdaftar" class="btn-daftar" onclick="fokusNama()">DAFTAR SEKARANG</a>
+    </div>
+  </div>
+</header>
+<!-- ========== FORMULIR PENDAFTARAN ========== -->
+<section class="form-section reveal-up" id="formdaftar">
+  <div class="form-container">
+
+    <h2 class="form-title">FORMULIR PENDAFTARAN SANTRI BARU</h2>
+    <div class="form-line"></div>
+
+    <form id="formPPDB">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" id="nama" required>
+        </div>
+
+        <div class="form-group">
+          <label>Tempat Lahir</label>
+          <input type="text" id="tempatLahir" required>
+        </div>
+
+        <div class="form-group">
+          <label>Tanggal Lahir</label>
+          <input type="date" id="tanggalLahir" required>
+        </div>
+
+        <div class="form-group">
+          <label>Jenis Kelamin</label>
+          <select id="jk" required>
+            <option value="">Pilih...</option>
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>Alamat Lengkap</label>
+          <textarea id="alamat" rows="2" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Nama Bapak</label>
+          <input type="text" id="namaBapak" required>
+        </div>
+
+        <div class="form-group">
+          <label>Nama Ibu</label>
+          <input type="text" id="namaIbu" required>
+        </div>
+
+        <div class="form-group">
+          <label>Pekerjaan Orang Tua</label>
+          <input type="text" id="pekerjaanOrtu" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kecamatan</label>
+          <input type="text" id="kecamatan" required>
+        </div>
+
+        <div class="form-group">
+          <label>Kabupaten</label>
+          <input type="text" id="kabupaten" required>
+        </div>
+
+        <div class="form-group full">
+          <label>Status dalam Keluarga (Kandung / Angkat / dll)</label>
+          <input type="text" id="statusKeluarga" required>
+        </div>
+
+        <div class="form-group">
+          <label>Anak ke-</label>
+          <input type="number" id="anakKe" required>
+        </div>
+
+        <div class="form-group">
+          <label>Dari Berapa Saudara</label>
+          <input type="number" id="jumlahSaudara" required>
+        </div>
+
+        <div class="form-group">
+          <label>No. Telp Orang Tua</label>
+          <input type="tel" id="telpOrtu" required>
+        </div>
+                <!-- ✅ TAMBAHAN BARU -->
+        <div class="form-group">
+            <label>Nomor WhatsApp</label>
+            <input type="tel" id="waSiswa" placeholder="Contoh: 62812xxxxxx" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="emailSiswa" placeholder="contoh@gmail.com" required>
+        </div>
+
+      </div>
+
+      <button type="button" class="btn-daftar-wa" onclick="kirimWA()">
+        Daftar via WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- KOLOM 1 -->
+    <div class="footer-col">
+      <h1 class="footer-brand">HIDAYATUL MUBTADI-IN</h1>
+      <h2 class="footer-arab">مؤسسة المعهد الإسلامي هداية المبتدئين</h2>
+      <p class="footer-address">
+        Jl. Teratai, Condro Utara, Kaliwates, Kab. Jember
+      </p>
+
+<div class="social-footer">
+  <span class="soc ig"><i class="fab fa-instagram"></i></span>
+  <span class="soc wa"><i class="fab fa-whatsapp"></i></span>
+  <span class="soc fb"><i class="fab fa-facebook-f"></i></span>
+</div>
+
+
+    </div>
+
+    <!-- KOLOM 2 -->
+    <div class="footer-col">
+      <h3>Kontak</h3>
+      <ul>
+        <li><i class="fas fa-phone"></i> 0813-3210-4643</li>
+        <li class="contact-row">
+          <i class="fas fa-envelope"></i>
+          <span>pphidayatulmubtadiiin@gmail.com</span>
+        </li>
+
+        <li><i class="far fa-clock"></i> Senin–Jumat: 07.00–17.00</li>
+        <li><i class="far fa-clock"></i> Sabtu–Minggu: 07.00–15.00</li>
+      </ul>
+    </div>
+
+    <!-- KOLOM 3 -->
+    <div class="footer-col">
+      <h3>Kategori</h3>
+      <ul>
+        <li>Pendidikan</li>
+        <li>Berita</li>
+        <li>PPDB</li>
+      </ul>
+    </div>
+
+    <!-- KOLOM 4 -->
+    <div class="footer-col">
+      <h3>Kunjungi Pondok</h3>
+      <p>Klik untuk menuju lokasi Pondok di Google Maps</p>
+      <a href="kontak.html#maplokasi" class="btn-lokasi">
+        <i class="fas fa-map-marker-alt"></i> LOKASI
+      </a>
+    </div>
+
+  </div>
+</footer>
+<!-- ===== FOOTER BAWAH (COPYRIGHT) ===== -->
+<div class="footer-bottom">
+  <p>© 2026 Pondok Pesantren Hidayatul Mubtadi-in • All Rights Reserved</p>
+</div>
+<!-- PREMIUM PAGE TRANSITION -->
+<div id="page-transition">
+  <div class="circle-loader"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

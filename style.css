@@ -1,0 +1,2131 @@
+/* ===== GLOBAL RESET CLEAN ===== */
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html, body{
+  width:100%;
+  overflow-x:hidden;
+  font-family:"Segoe UI", sans-serif;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+body{
+  background:white;
+  color:#222;
+}
+.container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 5%;
+}
+
+/* ======= TOP BAR BARU (MODEL IKON LINGKARAN) ======= */
+.top-bar{
+  position: sticky;   /* 🔥 kunci utamanya */
+  top: 0;
+  z-index: 1000;
+  background:#ffffff;
+  padding:3px 5%;
+}
+
+
+/* wadah tengah */
+.top-content{
+  max-width:1300px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* setiap item: ikon lingkaran + teks di samping */
+.top-item{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  color:#222;
+  font-size:12px;
+}
+
+/* LINGKARAN IKON — mirip contohmu */
+.icon-circle{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#C9A227;   /* warna kuning seperti contoh */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ikon di dalam lingkaran */
+.icon-circle i{
+  color:#ffff;/* hijau tua supaya kontras */
+  font-size:14px;
+}
+
+
+/* ====== LOGO + TULISAN SAMPING ====== */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  width:60px;
+}
+
+.title-top{
+  font-size:12px;
+  color:#444;
+}
+
+.title-main{
+  font-size:20px;
+  font-weight:800;
+  color:#1E7F43;
+}
+
+.title-arab{
+  font-size:14px;
+  color:#C9A227;
+}
+
+.title-address{
+  font-size:11px;
+  color:#555;
+}
+
+/* ======= NAVBAR ======= */
+.main-nav{
+  position: sticky;   /* 🔥 kunci kedua */
+  top: 34px;          /* tinggi top bar (sesuaikan kalau perlu) */
+  z-index: 999;
+  background:white;
+  box-shadow:0 2px 7px rgba(0,0,0,0.08);
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  padding:15px 3%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+/* ================= MENU MODEL AWAL (INDICATOR + AFTER) ================= */
+
+#menu{
+  list-style:none;
+  display:flex;
+  gap:25px;
+  margin-left:90px;
+  position: relative;
+}
+
+/* ========== MENU DENGAN GARIS ANIMASI MODERN ========== */
+#menu{
+  list-style:none;
+  display:flex;
+  gap:25px;
+  margin-left:90px;
+}
+
+/* link menu */
+#menu a{
+  position: relative;
+  padding: 6px 0;
+  text-decoration:none;
+  color:#222;
+  font-weight:600;
+}
+
+/* GARIS BAWAH ANIMASI (MUNCUL DARI TENGAH) */
+#menu a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  height:3px;
+  width:0;
+  background:#D4AF37; /* EMAS */
+  transition: all .35s ease;
+  transform: translateX(-50%);
+}
+
+/* saat hover */
+#menu a:hover::after{
+  width:100%;
+}
+
+/* MENU AKTIF (HALAMAN SEKARANG) */
+#menu a.active::after{
+  width:100%;
+}
+/* ================= MOBILE MENU FINAL ELEGAN ================= */
+@media(max-width:900px){
+
+  #menu{
+    position:absolute;
+    top:75px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:88%;
+    max-width:320px;
+    padding:18px;
+
+    background:white;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    flex-direction:column;
+    gap:12px;
+
+    opacity:0;
+    transform:translate(-50%,-10px);
+    pointer-events:none;
+    transition:.35s ease;
+    z-index:999;
+  }
+
+  #menu.show{
+    opacity:1;
+    transform:translate(-50%,0);
+    pointer-events:auto;
+  }
+
+  #menu li{
+    list-style:none;
+    text-align:center;
+  }
+
+  #menu a{
+    display:block;
+    padding:14px 10px;
+    font-size:17px;
+    font-weight:700;
+    color:#1E7F43;
+    border-radius:12px;
+    transition:.25s;
+    position:relative;
+  }
+
+  /* GARIS BAWAH EMAS SAJA */
+  #menu a::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:6px;
+    width:0;
+    height:3px;
+    background:#D4AF37;
+    transform:translateX(-50%);
+    transition:.3s;
+  }
+
+  /* Hover / aktif */
+  #menu a:hover,
+  #menu a.active{
+    color:#1E7F43;
+    background:#f9faf9;
+  }
+
+  #menu a:hover::after,
+  #menu a.active::after{
+    width:40%;
+  }
+
+}
+/* ===== FIX MENU MOBILE BENAR-BENAR TENGAH ===== */
+@media(max-width:900px){
+
+  #menu{
+    margin-left:0 !important;   /* 🔥 HAPUS offset lama */
+    left:50% !important;
+    right:auto !important;
+    transform:translateX(-50%) !important;
+  }
+
+}
+
+/* ========== HERO FOTO BACKGROUND ========== */
+.hero{
+  position:relative;
+  width:100%;
+  min-height:80vh;
+  overflow:hidden;
+}
+
+/* FOTO FULL SCREEN */
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
+
+.hero-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* LAPISAN GELAP BIAR TULISAN JELAS */
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:2;
+}
+
+/* TULISAN DI ATAS FOTO */
+.hero-content{
+  position:relative;
+  z-index:3;
+  max-width:1200px;
+  margin:auto;
+  padding:120px 5%;
+  color:white;
+}
+
+/* ======= KOTAK BLUR HANYA DI AREA TULISAN ======= */
+.hero-text-box{
+  max-width:450px;
+  padding:30px 32px;
+  border-radius:16px;
+
+  /* efek kaca + blur lokal */
+  background:rgba(0,0,0,0.0);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(0px);
+
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+/* teks tetap putih */
+.hero-text{
+  color:white;
+}
+
+/* tombol tetap rapi */
+.btn-group{
+  display:flex;
+  gap:14px;
+  margin-top:18px;
+}
+@media(max-width:900px){
+
+  /* ==== PENTOKIN NAVBAR KE PALING ATAS ==== */
+  .main-nav{
+    position: fixed;
+    top: 0 !important;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* ==== SEMBUNYIKAN TOP BAR DI MOBILE (BIAR GA NGEGANJEL) ==== */
+  .top-bar{
+    display: none;
+  }
+
+  /* ==== DORONG HERO SUPAYA TIDAK TERTUTUP NAVBAR ==== */
+  .hero{
+    margin-top: 50px;   /* tinggi navbar */
+  }
+}
+
+/* mobile */
+@media(max-width:900px){
+
+  .hero{
+    min-height:65vh;
+  }
+
+  .hero-content{
+    padding:90px 5% 50px;
+  }
+
+  .hero-text-box{
+    padding:24px;
+  }
+
+  .btn-group{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .btn-primary,
+  .btn-outline-white{
+    width:220px;
+    text-align:center;
+  }
+}
+
+
+/* WARNA TEKS */
+.hero-text .white{ color:white; }
+
+/* TOMBOL VERSI PUTIH */
+.btn-outline-white{
+  border:2px solid white;
+  color:white;
+  padding:12px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero{
+    min-height:65vh;
+  }
+
+  .hero-content{
+    padding:90px 5% 50px;
+  }
+
+  .hero-text h1{
+    font-size:2.3rem;
+  }
+}
+
+
+.arab{
+  font-size:16px;
+  color:#C9A227;
+  margin-bottom:12px;
+}
+
+.tagline{
+  max-width:600px;
+  margin-bottom:20px;
+}
+
+/* Tombol */
+.btn-primary{
+  background:#1E7F43;
+  color:white;
+  padding:12px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn-outline{
+  border:2px solid #1E7F43;
+  color:#1E7F43;
+  padding:12px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+/* ===== ORNAMEN BERGERAK DI ATAS FOTO ===== */
+
+
+@media(max-width:900px){
+  .top-content{
+    flex-direction:column;  /* jadi turun ke bawah */
+    align-items:center;
+    gap:8px;
+  }
+
+  .top-item{
+    width:280px;       /* biar seragam */
+    justify-content:center;
+  }
+  #clock{
+    display: none;
+  }
+
+  /* Kalau kamu juga mau sembunyikan lingkaran ikon jam */
+  .top-item:first-child{
+    display: none;
+  }
+
+  .hero-content{
+    padding:50px 5% 30px; /* tetap naik tapi tidak terlalu tinggi */
+  }
+
+  .hero-text h1{
+    font-size:2.3rem;
+  }
+}
+
+/* BUTTON */
+.btn-primary{
+  background:#1E7F43;
+  color:white;
+  padding:12px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn-outline{
+  border:2px solid #1E7F43;
+  color:#1E7F43;
+  padding:12px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+  .hamburger{
+    display: none;      /* ❗ HILANG DI DESKTOP */
+    font-size: 28px;
+    color: #1E7F43;
+    cursor: pointer;
+  }
+/* ======= RESPONSIVE ======= */
+@media(max-width:900px){
+  /* hanya tampil jam */
+  .top-item:nth-child(2),
+  .top-item:nth-child(3){
+    display:none;
+  }
+
+  .top-content{
+    justify-content:center;
+  }
+
+  .top-item{
+    width:auto;      /* biar tidak kepanjangan */
+  }
+  #menu{
+    display:none;
+    position:absolute;
+    top:90px;
+    left:0;
+    width:100%;
+    background:white;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+  }
+
+  #menu.show{
+    display:flex;
+  }
+
+  .hamburger{ /* buat hp*/
+    display:block;
+  }
+.hero-grid{
+    grid-template-columns:1fr;
+    text-align:left;
+  }
+
+  .hero-text h1{
+    font-size:2.3rem;
+  }
+
+  .hero-image{
+    max-width:350px;
+  }
+}
+/* ========== 1) DOT PATTERN BERGERAK ========== */
+.hero-dots{
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle, rgba(30,127,67,0.2) 2px, transparent 2px);
+  background-size:40px 40px;
+  animation: dotsMove 18s linear infinite;
+  opacity:0.35;
+  pointer-events:none;
+}
+
+@keyframes dotsMove{
+  0%{ background-position:0 0; }
+  100%{ background-position:40px 40px; }
+}
+
+/* ========== 2) ZIG-ZAG MELAYANG ========== */
+.hero-zigzag{
+  position:absolute;
+  top:15%;
+  right:-10%;
+  width:420px;
+  height:120px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(106, 116, 110, 0.35) 0,
+      rgba(44, 46, 45, 0.35) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+  transform:rotate(-8deg);
+  animation: zigzagFloat 9s ease-in-out infinite;
+  opacity:0.4;
+  pointer-events:none;
+}
+
+@keyframes zigzagFloat{
+  0%,100%{ transform:translateY(0) rotate(-8deg); }
+  50%{ transform:translateY(-18px) rotate(-6deg); }
+}
+
+/* ========== 3) GLOW HALUS “BERNAPAS” ========== */
+.hero-glow{
+  position:absolute;
+  width:600px;
+  height:600px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(153, 158, 154, 0.35),
+    rgba(144,224,169,0)
+  );
+  bottom:-150px;
+  left:-120px;
+  filter:blur(20px);
+  animation: glowBreath 6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+@keyframes glowBreath{
+  0%,100%{ transform:scale(1); opacity:0.45; }
+  50%{ transform:scale(1.15); opacity:0.65; }
+}
+
+@media(max-width:900px){
+  .hero{
+    min-height:70vh;
+  }
+
+  .hero-content h1{
+    font-size:2.2rem;
+  }
+
+  .btn-group{
+    flex-direction:column;
+    max-width:220px;
+  }
+    .btn-group{
+    display:flex;
+    flex-direction:column;   /* ← bikin tombol turun ke bawah */
+    align-items:flex-start;  /* tetap rata kiri */
+    gap:12px;                /* jarak antar tombol */
+    max-width:225px;         /* biar tidak terlalu lebar */
+  }
+
+  .btn-primary,
+  .btn-outline{
+    width:100%;              /* tombol penuh, tidak sempit */
+    text-align:center;
+  }
+
+  .hero-content{
+    padding:90px 5% 50px;
+  }
+    .hero-dots{
+    background-size:50px 50px; /* biar tidak terlalu padat */
+  }
+
+  .hero-zigzag{
+    width:260px;
+    top:8%;
+    right:-20%;
+  }
+
+  .hero-glow{
+    width:420px;
+    height:420px;
+    bottom:-120px;
+    left:-140px;
+  }
+}
+
+/* ========== SOCIAL BAR (DI BAWAH HERO) ========== */
+.social-bar{
+  max-width:1300px;
+  margin:20px auto 0;
+  padding:15px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  border-bottom:1px solid #eee;
+}
+
+/* Teks kiri */
+.social-text{
+  font-size:24px;
+  font-weight:600;
+  color:#222;
+}
+
+/* Ikon kanan */
+.social-icons{
+  display:flex;
+  gap:18px;
+  font-size:26px;
+}
+
+/* Default warna ikon (mirip foto) */
+.social-icons a{
+  text-decoration:none;
+  transition:0.2s;
+}
+
+/* Warna asli tiap ikon */
+.fb{ color:#1877F2; }      /* biru facebook */
+.ig{ color:#E4405F; }      /* pink instagram */
+.yt{ color:#FF0000; }      /* merah youtube */
+.mail{ color:#D32F2F; }    /* merah email */
+.wa{ color:#25D366; }      /* hijau whatsapp */
+
+.social-icons a:hover{
+  transform:scale(1.1);
+}
+
+/* RESPONSIVE MOBILE */
+@media(max-width:900px){
+  .social-bar{
+    flex-direction:column;
+    text-align:center;
+    gap:8px;
+  }
+
+  .social-icons{
+    justify-content:center;
+    font-size:22px;   /* kembali lebih kecil di HP */
+  }
+}
+@media(max-width:900px){
+
+  /* kecilkan lingkaran ikon di mobile */
+  .icon-circle{
+    width:26px;      /* sebelumnya 32px */
+    height:26px;
+  }
+
+  .icon-circle i{
+    font-size:13px;  /* sebelumnya 16px */
+  }
+
+  /* kecilkan teks jam sedikit */
+  #clock{
+    font-size:13px;  /* biar tidak terlalu besar */
+  }
+
+  /* rapikan jarak agar tidak terlalu lebar */
+  .top-item{
+    gap:6px;
+  }
+
+}
+/* ========== TICKER BAR (TEKS BERJALAN) ========== */
+.ticker-bar{
+  display:flex;
+  align-items:center;
+  background:#ffff ;   /* hijau pondok */
+  color:#222;
+  padding:10px 5%;
+  gap:15px;
+  overflow:hidden;
+}
+
+/* Label kiri */
+.ticker-label{
+  background:#D4AF37;   /* EMAS LEBIH TERANG */
+  color:white;
+  padding:2px 10px;
+  font-weight:600;
+  border-radius:6px;
+  white-space:nowrap;
+}
+
+/* Area teks berjalan */
+.ticker-wrapper{
+  flex:1;
+  overflow:hidden;
+  position:relative;
+}
+
+/* Teks berjalan */
+.ticker-text{
+  display:inline-block;
+  white-space:nowrap;
+  animation: marquee 14s linear infinite;
+}
+
+/* Tanggal di kanan */
+.ticker-date{
+  background:#D4AF37;   /* EMAS LEBIH TERANG */
+  color:white; 
+  padding:2px 10px;
+  border-radius:6px;
+  white-space:nowrap;
+  font-weight:600;
+}
+
+/* Animasi teks berjalan */
+@keyframes marquee{
+  0%{
+    transform:translateX(100%);
+  }
+  100%{
+    transform:translateX(-100%);
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media(max-width:900px){
+  .ticker-bar{
+    flex-wrap:wrap;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .ticker-wrapper{
+    width:100%;
+    order:2;
+    margin:6px 0;
+  }
+
+  .ticker-date{
+    order:3;
+  }
+}
+/* ========== REVISI TICKER (VERSI TERBALIK) ========== */
+
+/* ukuran bar lebih ramping */
+.ticker-bar{
+  padding:2px 5%;
+  min-height:20px;
+}
+
+/* teks lebih pelan */
+.ticker-text{
+  animation: marquee 45s linear infinite;
+}
+
+/* ====== DESKTOP (901px ke atas) ====== */
+@media(min-width:901px){
+  .ticker-label{
+    display:block;   /* TAMPIL di desktop */
+  }
+
+  .ticker-date{
+    display:block;   /* TAMPIL di desktop */
+  }
+
+  .ticker-bar{
+    justify-content:space-between;
+  }
+}
+
+/* ====== MOBILE (900px ke bawah) ====== */
+@media(max-width:900px){
+
+  /* SEMBUNYIKAN label & tanggal di mobile */
+  .ticker-label,
+  .ticker-date{
+    display:none;
+  }
+
+  .ticker-bar{
+    justify-content:flex-start; /* teks mulai dari kiri */
+  }
+
+  .ticker-wrapper{
+    width:100%;
+  }
+
+  /* teks makin pelan di hp */
+  .ticker-text{
+    animation-duration:30s;
+  }
+}
+.ticker-wrapper{
+  overflow:hidden;
+  position:relative;
+}
+
+/* Track berisi dua teks */
+.ticker-track{
+  display:flex;
+  width:max-content;
+  animation: marquee 20s linear infinite;
+}
+
+/* setiap teks jangan terputus */
+.ticker-text{
+  white-space:nowrap;
+  padding-right:80px; /* jarak antar pengulangan */
+}
+
+/* Animasi seamless */
+@keyframes marquee{
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(-50%);
+  }
+}
+/* =================== LAYOUT BERITA (VERSI RAPI) =================== */
+/* ===== JUDUL BERITA TERKINI ===== */
+.news-header{
+  max-width:1200px;
+  margin:30px auto 15px;
+  padding:0 4%;
+}
+
+.news-header h2{
+  font-size:24px;
+  color:#222;
+}
+
+.news-header .line{
+  width:80px;
+  height:3px;
+  background:#1E7F43;
+  margin-top:6px;
+}
+.news-section{
+  max-width:1200px;
+  margin:20px auto;
+  padding:0 5%;
+}
+
+/* GRID UTAMA */
+.news-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  grid-template-rows: auto auto;         /* 2 baris */
+  gap:12px;
+}
+
+/* 2 BERITA BESAR DI ATAS */
+.news-card.big{
+  grid-column: span 2;
+  height:280px;   /* tinggi lebih proporsional */
+}
+
+/* 4 BERITA KECIL DI BAWAH */
+.news-card.small{
+  grid-column: span 1;
+  height:180px;
+}
+
+/* KARTU BERITA (UMUM) */
+.news-card{
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
+  display:block;
+}
+
+/* GAMBAR BIAR RAPI */
+.news-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* OVERLAY GELAP DI BAWAH FOTO */
+.news-overlay{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:16px;
+  background:linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,.15));
+}
+
+/* TAG KATEGORI */
+.news-tag{
+  display:inline-block;
+  background:#222;
+  color:white;
+  padding:3px 8px;
+  font-size:12px;
+  border-radius:4px;
+  margin-bottom:6px;
+}
+
+.news-tag.green{
+  background:#1E7F43;
+}
+
+/* JUDUL BERITA */
+.news-card.big h3{
+  color:white;
+  font-size:18px;
+  line-height:1.3;
+}
+
+.news-card.small h4{
+  color:white;
+  font-size:14px;
+  line-height:1.3;
+}
+
+/* TANGGAL */
+.news-date{
+  color:#D4AF37; /* emas */
+  font-size:12px;
+  margin-top:6px;
+}
+
+/* =================== MOBILE (SUPER PENTING) =================== */
+@media(max-width:900px){
+
+  .news-grid{
+    grid-template-columns:1fr; /* 👉 1 kolom penuh */
+  }
+
+  .news-card.big,
+  .news-card.small{
+    grid-column: span 1;
+    height:240px; /* nyaman di HP */
+  }
+
+}
+/* ===== BANNER INFO SANTRI BARU ===== */
+.info-banner{
+  text-align:center;
+  padding:80px 3%;
+  background:#f4faf7;
+}
+
+.info-banner h2{
+  font-size:25px;
+  color:#1E7F43;
+}
+
+.info-banner h1{
+  font-size:38px;
+  color:#222;
+  margin:8px 0;
+}
+
+.info-banner h3{
+  font-size:20px;
+  color:#555;
+  margin-bottom:25px;
+}
+
+.btn-info{
+  display:inline-block;
+  background:#504e49; /* warna toska mirip gambarmu */
+  color:white;
+  padding:12px 28px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+/* ====== BANNER SANTRI VERSI PREMIUM ====== */
+.banner-santri{
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 🔥 INI YANG BIKIN BACKGROUND TETAP DIAM */
+  background-image: url("fotopondok/futsal.jpeg"); /* ganti fotomu */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;   /* ← KUNCI UTAMA */
+}
+
+/* lapisan gelap biar teks jelas */
+.banner-santri::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+/* wadah teks tetap di atas foto */
+.banner-inner{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  max-width:900px;
+}
+
+
+/* warna teks */
+.info-title{
+  color:#D4AF37;   /* emas */
+  letter-spacing:1px;
+}
+
+.info-main{
+  color:white;
+  font-size:3rem;
+}
+
+.info-year{
+  color:#eee;
+}
+
+/* tombol emas */
+.btn-santri{
+  display:inline-block;
+  background:#D4AF37;
+  color:white;
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+.reveal{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ===================== LAYOUT BAWAH (TIDAK MENGGANGGU BERITA ATAS) ===================== */
+.four-grid{
+  max-width:1300px;
+  margin:10px auto 40px;
+  padding:20px 5%;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:24px;
+}
+
+/* tiap kolom = 1 besar + 2 kecil (VERTIKAL) — KHUSUS DI four-grid */
+.four-grid .news-column{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+/* ================== KARTU UMUM (KHUSUS BAWAH) ================== */
+.four-grid .news-card{
+  position:relative;
+  width:100%;
+  border-radius:12px;
+  overflow:hidden;
+  display:block;
+  background:white;
+  box-shadow:0 5px 12px rgba(0,0,0,.08);
+}
+
+/* foto selalu penuh kartu */
+.four-grid .news-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ================== UKURAN KARTU (KHUSUS BAWAH) ================== */
+
+/* KARTU BESAR */
+.four-grid .news-card.big{
+  height:300px;
+}
+
+/* KARTU KECIL — FOTO KIRI, TEKS KANAN */
+.four-grid .news-card.small{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  height:auto;
+  padding:6px;
+}
+
+/* FOTO KECIL MINI */
+.four-grid .news-card.small img{
+  width:90px;
+  height:70px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* TEKS DI SAMPING FOTO */
+.four-grid .news-small-text{
+  flex:1;
+}
+
+/* label kategori */
+.four-grid .news-tag{
+  display:inline-block;
+  background:#555;
+  color:#fff;
+  padding:3px 8px;
+  border-radius:6px;
+  font-size:11px;
+  margin-bottom:4px;
+}
+
+/* tanggal */
+.four-grid .news-date{
+  font-size:12px;
+  color:#C9A227; /* emas */
+  margin-bottom:4px;
+}
+
+/* judul kecil */
+.four-grid .news-small-text h4{
+  font-size:13px;
+  line-height:1.3;
+  color:#0f766e;
+}
+
+/* ================== TOMBOL SELENGKAPNYA ================== */
+.four-grid .btn-more{
+  display:inline-block;
+  margin-top:8px;
+  background:#D4AF37;   /* emas */
+  color:white;
+  text-align:center;
+  padding:8px 16px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  width:auto;
+}
+
+/* ================== MOBILE ================== */
+@media(max-width:900px){
+
+  .four-grid{
+    grid-template-columns:1fr;
+  }
+
+  .four-grid .news-card.big{
+    height:240px;
+  }
+
+  .four-grid .news-card.small img{
+    width:80px;
+    height:60px;
+  }
+
+  .four-grid .btn-more{
+    width:100%;
+  }
+}
+/* ======== SECTION MODEL ALFATTAH GIBS ======== */
+.gibs-section{
+  background:#4a2a18;  /* coklat tua mirip contoh */
+  padding:80px 5%;
+}
+
+.gibs-wrapper{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 1fr 2fr; /* KIRI KOTAK, KANAN PANJANG */
+  gap:20px;
+}
+
+/* KARTU UMUM */
+.gibs-card,
+.gibs-long{
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
+  min-height:380px;
+}
+
+/* FOTO PENUH */
+.gibs-card img,
+.gibs-long img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* OVERLAY GRADASI */
+.gibs-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.85),
+    rgba(0,0,0,.2)
+  );
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:25px;
+}
+
+/* JUDUL */
+.gibs-overlay h3{
+  font-size:22px;
+  margin-bottom:6px;
+}
+
+/* TEKS */
+.gibs-overlay p{
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+/* TOMBOL */
+.gibs-btn{
+  display:inline-block;
+  background:#f97316; /* oranye mirip contoh */
+  color:white;
+  padding:10px 18px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+  width:max-content;
+}
+
+/* ===== ANIMASI MASUK (SAMA DENGAN ALFATTAH) ===== */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  transition: all .8s ease-out;
+}
+
+.fade-up.show{
+  opacity:1;
+  transform:translateY(0);
+}
+/* ================= SECTION GAYA AL-FATTAH ================= */
+.gibs-section{
+  position:relative;
+  width:100%;
+  min-height:65vh;
+  background:url('fotopondok/pondok.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:0 6%;
+}
+
+/* OVERLAY KHUSUS KARTU FOTO (biar tidak nutupi section) */
+.gibs-like .gibs-overlay{
+  position:absolute;
+  bottom:60px;
+  left:20px;
+  right:auto;
+  inset:unset;   /* <-- KUNCI UTAMA BIAR TIDAK FULL LAYAR */
+  background:none;
+  color:white;
+}
+
+
+/* WADAH TEKS */
+.gibs-text{
+  position:relative;
+  z-index:2;
+  max-width:600px;
+  color:white;
+}
+
+/* LABEL KECIL DI ATAS JUDUL */
+.gibs-label{
+  letter-spacing:2px;
+  font-size:13px;
+  margin-bottom:8px;
+  color:#D4AF37; /* EMAS */
+}
+
+/* JUDUL BESAR */
+.gibs-title{
+  font-size:3rem;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+
+/* DESKRIPSI */
+.gibs-desc{
+  font-size:16px;
+  line-height:1.6;
+  opacity:0.9;
+}
+
+/* ========== MOBILE ========== */
+@media(max-width:900px){
+  .gibs-section{
+    min-height:55vh;
+    padding:0 5%;
+  }
+
+  .gibs-title{
+    font-size:2.2rem;
+  }
+
+  .gibs-desc{
+    font-size:14px;
+  }
+}
+/* ========== SECTION MIRIP ALFATTAH ========== */
+.gibs-like{
+  background:linear-gradient(
+    to right,
+    #4a4947,
+    #767470,
+    #c9c8c5
+  );
+  color:white;
+  padding:80px 5%;
+  min-height: 80vh;   /* 🔥 PENTING BIAR TIDAK KOSONG */
+}
+
+/* wadah tengah */
+.gibs-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ===== BARIS ATAS (TEKS) ===== */
+.gibs-top{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:60px;
+  margin-bottom:50px;
+}
+
+/* kiri */
+.gibs-small{
+  letter-spacing:2px;
+  font-size:13px;
+  opacity:.8;
+}
+
+.gibs-big{
+  font-size:3rem;
+  margin:6px 0;
+}
+
+.gibs-line{
+  width:70px;
+  height:3px;
+  background:#D4AF37; /* EMAS */
+}
+
+/* kanan */
+.gibs-right p{
+  line-height:1.7;
+  font-size:15px;
+  opacity:.9;
+}
+
+/* ===== BARIS BAWAH (FOTO) ===== */
+.gibs-grid{
+  display:grid;
+  grid-template-columns: 1fr 2fr; /* kiri kotak, kanan lebar */
+  gap:20px;
+}
+
+/* kartu umum */
+.gibs-card{
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+/* foto full */
+.gibs-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* overlay teks */
+.gibs-overlay{
+  position:absolute;
+  bottom:60px;
+  left:20px;
+  color:white;
+}
+
+/* tombol */
+.gibs-btn{
+  position:absolute;
+  bottom:15px;
+  left:20px;
+  background:#F97316; /* ORANYE seperti contoh */
+  color:white;
+  padding:10px 18px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ukuran kartu */
+.gibs-card.square{
+  height:380px;
+}
+
+.gibs-card.wide{
+  height:380px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .gibs-top{
+    grid-template-columns:1fr;
+  }
+
+  .gibs-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gibs-card.square,
+  .gibs-card.wide{
+    height:300px;
+  }
+
+  .gibs-big{
+    font-size:2.2rem;
+  }
+}
+/* ========== FOOTER STYLE ========== */
+
+.site-footer{
+  background:#f5f5f5;
+  padding:60px 5%;
+}
+
+/* GRID 4 KOLOM DI DESKTOP (tetap seperti maumu) */
+.footer-container{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:40px;
+}
+
+/* === BRAND KIRI (AL FATTAH) === */
+.footer-brand{
+  color:#1E7F43;      /* hijau pondok */
+  font-size:26px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+
+.footer-arab{
+  font-size:14px;
+  color:#C9A227;      /* emas */
+  margin-bottom:6px;
+}
+
+.footer-address{
+  color:#555;
+  line-height:1.5;
+  margin-bottom:14px;
+}
+
+/* === SOSIAL MEDIA (tetap warna asli) === */
+.social-footer{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+
+.social-footer .soc{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:18px;
+}
+
+/* warna tiap platform */
+.social-footer .ig{ background:#E4405F; }
+.social-footer .wa{ background:#25D366; }
+.social-footer .fb{ background:#1877F2; }
+
+.social-footer .soc:hover{
+  transform:scale(1.08);
+  transition:.2s;
+}
+/* === BERSIHKAN GARIS DI BAWAH ICON SOSIAL === */
+.social-footer a{
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* pastikan juga tidak ada garis hover */
+.social-footer a:hover{
+  text-decoration: none !important;
+}
+
+/* === JUDUL KOLOM (garis emas di bawah) === */
+.footer-col h3{
+  color:#222;
+  margin-bottom:12px;
+  position:relative;
+}
+
+.footer-col h3:after{
+  content:"";
+  display:block;
+  width:40px;
+  height:3px;
+  background:#D4AF37; /* emas */
+  margin-top:6px;
+}
+
+/* === LIST KATEGORI === */
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  color:#555;
+  margin-bottom:8px;
+}
+
+/* === KONTAK (ikon + teks sejajar) === */
+.contact-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.contact-row i{
+  font-size:16px;
+  color:#555;
+}
+
+/* === TOMBOL LOKASI (tetap emas seperti maumu) === */
+.btn-lokasi{
+  display:inline-block;
+  background:#D4AF37;
+  color:white;
+  padding:6px 18px;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+}
+
+/* =================== MOBILE (VERSI RAPI TAPI GAYA TETAP SAMA) =================== */
+@media(max-width:900px){
+
+  .footer-container{
+    grid-template-columns:1fr;  /* jadi 1 kolom */
+    gap:28px;
+    text-align:left;
+  }
+
+  /* URUTAN DI HP (rapi, tapi gaya tetap sama) */
+  .footer-brand{ order:1; }
+  .footer-contact{ order:2; }
+  .footer-category{ order:3; }
+  .footer-location{ order:4; }
+
+  /* Biar kategori TIDAK geser ke kanan lagi */
+  .footer-col:nth-child(3){
+    padding-left:0;
+  }
+
+  /* sosial media tetap rapi kiri */
+  .social-footer{
+    justify-content:flex-start;
+  }
+
+  /* tombol lokasi full lebar di HP */
+  .btn-lokasi{
+    width:100%;
+    text-align:center;
+  }
+
+  /* garis emas tetap rata kiri di HP */
+  .footer-col h3:after{
+    margin-left:0;
+  }
+}
+
+/* ===== FOOTER BAWAH (COPYRIGHT BAR) ===== */
+.footer-bottom{
+  background:#ffff;      /* hijau pondok */
+  color:#555;
+  text-align:center;
+  padding:12px 5%;
+  font-size:13px;
+}
+
+/* biar tidak mepet */
+.footer-bottom p{
+  margin:0;
+}
+
+/* RESPONSIVE MOBILE */
+@media(max-width:900px){
+  .footer-bottom{
+    font-size:12px;
+    padding:10px 4%;
+  }
+}
+/* ===== ANIMASI HERO ===== */
+
+/* kondisi awal (sebelum muncul) */
+.animate-photo{
+  transform: translateX(-80px);
+  opacity: 0;
+  animation: slideFromLeft 1s ease-out forwards;
+}
+
+.animate-text{
+  transform: translateY(-40px);
+  opacity: 0;
+  animation: dropFromTop 1s ease-out forwards;
+  animation-delay: .3s; /* biar tulisan masuk setelah foto */
+}
+
+/* Foto masuk dari kiri */
+@keyframes slideFromLeft{
+  from{
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Tulisan turun dari atas */
+@keyframes dropFromTop{
+  from{
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Biar berita ikut sistem reveal (1x saja) */
+.news-card{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .7s ease-out;
+}
+
+/* saat sudah terlihat */
+.news-card.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===== ANIMASI SCROLL ALA ALFATTAH ===== */
+
+.reveal-up,
+.reveal-left,
+.reveal-right{
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+/* teks naik dari bawah */
+.reveal-up{
+  transform: translateY(40px);
+}
+
+/* foto masuk dari kiri */
+.reveal-left{
+  transform: translateX(-80px);
+}
+
+/* foto masuk dari kanan */
+.reveal-right{
+  transform: translateX(80px);
+}
+
+/* saat sudah terlihat di layar */
+.reveal-up.active,
+.reveal-left.active,
+.reveal-right.active{
+  opacity: 1;
+  transform: translate(0,0);
+}
+/* ====== QUOTE SECTION — KEMBAR BANNER-SANTRI ====== */
+.quote-section{
+  position: relative;
+  min-height: 70vh;              /* SAMA */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 🔥 SAMA PERSIS DENGAN BANNER-SANTRI */
+  background-image: url("fotopondok/futsal.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;   /* ← inilah yang bikin nempel */
+}
+
+/* overlay gelap — KEMBAR BANNER SANTRI */
+.quote-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.60);
+}
+
+/* wadah teks — analog banner-inner */
+.quote-inner{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  max-width:900px;
+  padding:0 20px;
+}
+
+/* label kecil */
+.quote-label{
+  display:inline-block;
+  color:#D4AF37;      /* emas, biar senada banner */
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+
+/* teks utama */
+.quote-text{
+  color:white;
+  font-size:2rem;
+  line-height:1.35;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+/* nama tokoh */
+.quote-author{
+  color:#eee;
+  font-size:15px;
+}
+
+/* ===== RESPONSIVE — tetap sama rasa ===== */
+@media(max-width:900px){
+  .quote-section{
+    min-height: 60vh;
+    background-attachment: fixed;   /* JANGAN ubah ke scroll */
+    background-position: center top;
+  }
+
+  .quote-text{
+    font-size:1.6rem;
+  }
+}
+/* ===============================
+   TESTIMONI CLEAN VERSION
+=================================*/
+
+.testimoni-section{
+  padding:120px 0;
+  background:linear-gradient(
+    135deg,
+    #101111,
+    #212322,
+    #C9A227,
+    #f3f4f6
+  );
+  overflow:hidden;
+}
+
+.testimoni-container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 5%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+/* ===== LEFT ===== */
+
+.testimoni-left{
+  position:relative;
+  color:white;
+  overflow:hidden;
+}
+
+.testimoni-slider{
+  display:flex;
+  transition:transform .4s ease;
+}
+
+.testimoni-item{
+  min-width:100%;
+  padding:0 40px;
+  box-sizing:border-box;
+}
+
+.quote-mark{
+  font-size:60px;
+  color:#D4AF37;
+  margin-bottom:15px;
+}
+
+.testimoni-text{
+  font-size:18px;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+.testimoni-profile h4{
+  margin:0;
+  font-size:18px;
+}
+
+.testimoni-profile span{
+  font-size:14px;
+  opacity:.9;
+}
+
+/* ===== ARROWS ===== */
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,0.15);
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+  transition:.3s;
+  z-index:10;
+}
+
+.arrow:hover{
+  background:#D4AF37;
+}
+
+.arrow.left{ left:0; }
+.arrow.right{ right:0; }
+
+/* ===== RIGHT CARD ===== */
+
+.testimoni-card{
+  background:white;
+  padding:55px 50px;
+  border-radius:28px;
+}
+
+.testimoni-card h2{
+  font-size:30px;
+  line-height:1.3;
+  margin-bottom:30px;
+}
+
+.btn-testimoni{
+  background:#1E7F43;
+  color:white;
+  padding:10px 24px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+}
+.testimoni-card form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  width:100%;
+}
+
+.testimoni-card input,
+.testimoni-card textarea{
+  padding:12px 15px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  font-family:inherit;
+  font-size:14px;
+}
+
+.testimoni-card textarea{
+  resize:none;
+  min-height:100px;
+}
+.testimoni-card form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  width:100%;
+}
+
+.testimoni-card input,
+.testimoni-card textarea{
+  padding:12px 15px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-family:inherit;
+  font-size:14px;
+}
+
+.testimoni-card textarea{
+  resize:none;
+  min-height:110px;
+}
+
+.testimoni-card input:focus,
+.testimoni-card textarea:focus{
+  outline:none;
+  border-color:#1E7F43;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+  .testimoni-container{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:50px;
+  }
+
+  .testimoni-item{
+    padding:0 20px;
+  }
+
+  .testimoni-card{
+    padding:40px 25px;
+  }
+
+  .btn-testimoni{
+    display:inline-block;
+    width:100%;
+    max-width:260px;
+  }
+
+}
+/* ===== FIX POSISI ARROW DESKTOP ===== */
+@media(min-width:901px){
+
+  .arrow.left{
+    left:-10px;   /* geser lebih ke kiri */
+  }
+
+  .arrow.right{
+    right:-10px;  /* samakan kanan biar balance */
+  }
+
+}
+
+
+/* ===== FAKE PAGE LOADER (SUPER RINGAN) ===== */
+#page-loader{
+  position:fixed;
+  inset:0;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .2s ease;
+}
+
+#page-loader.show{
+  opacity:1;
+  pointer-events:all;
+}
+
+/* loader modern elegan */
+.loader-ring{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  border:4px solid #eee;
+  border-top:4px solid #1E7F43;
+  animation: spin .6s linear infinite;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+/* ===============================*/
+#page-transition{
+  position:fixed;
+  inset:0;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .4s ease;
+}
+
+#page-transition.active{
+  opacity:1;
+  pointer-events:all;
+}
+
+/* 🔥 Circle premium emas */
+.circle-loader{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#D4AF37;
+  animation: pulsePremium 1.6s ease-in-out infinite;
+}
+
+@keyframes pulsePremium{
+  0%{
+    transform:scale(.7);
+    opacity:.6;
+  }
+  50%{
+    transform:scale(1.2);
+    opacity:1;
+  }
+  100%{
+    transform:scale(.7);
+    opacity:.6;
+  }
+}
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+@media(max-width:900px){
+
+  .fasilitas-item,
+  .program-item,
+  .pengasuh-container,
+  .visi-misi-container,
+  .kontak-container,
+  .form-grid{
+    grid-template-columns:1fr !important;
+  }
+
+}
+.page-bg{
+  overflow:hidden;
+}
+
+.hero,
+.hero-ornamen{
+  overflow:hidden;
+}
