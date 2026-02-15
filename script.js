@@ -186,37 +186,35 @@ function fokusNama() {
 document.addEventListener("DOMContentLoaded", function(){
 
   const links = document.querySelectorAll("a[href]");
+  const transition = document.getElementById("page-transition");
 
   links.forEach(link => {
 
-    if(
-      link.hostname === window.location.hostname &&
-      !link.hasAttribute("target") &&
-      !link.getAttribute("href").startsWith("#")
-    ){
+    link.addEventListener("click", function(e){
 
-      link.addEventListener("click", function(e){
+      if(
+        link.hostname === window.location.hostname &&
+        !link.hasAttribute("target") &&
+        !link.getAttribute("href").startsWith("#")
+      ){
 
         e.preventDefault();
 
-       const transition = document.getElementById("page-transition");
-        if(transition){
-          transition.classList.add("active");
-        }
+        if(transition) transition.classList.add("active");
 
-
-        // 🔥 Delay 600ms (premium feel)
+        // delay kecil biar cepat
         setTimeout(() => {
-          window.location.href = this.href;
-        }, 600);
+          window.location.assign(this.href);
+        }, 250);
 
-      });
+      }
 
-    }
+    });
 
   });
 
 });
+
 let index = 0;
 function slideTesti(step){
   const slider = document.getElementById("testiSlider");
@@ -250,12 +248,19 @@ ${pesan}`;
 
   window.open(url, "_blank");
 }
-// ===== FIX LOADING SAAT BACK MOBILE =====
+// 🔥 BIAR BACK HP TIDAK LOADING LAMA
 window.addEventListener("pageshow", function (event) {
+
   const transition = document.getElementById("page-transition");
-  if (transition) transition.classList.remove("active");
+
+  // jika halaman dari cache (BACK)
+  if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+
+    if (transition) {
+      transition.classList.remove("active");
+    }
+
+  }
 });
-window.addEventListener("load", function () {
-  const transition = document.getElementById("page-transition");
-  if (transition) transition.classList.remove("active");
-});
+
+
